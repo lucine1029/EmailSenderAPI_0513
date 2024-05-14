@@ -7,7 +7,7 @@ namespace EmailSenderAPI_0513.Controllers
     public class HomeController : Controller
     {
         private readonly IEmailSender _emailSender;
-        
+
         //create an constructor, inside of constructor we receive an email sender from the denpendency injection 
         public HomeController(IEmailSender emailSender)
         {
@@ -18,7 +18,7 @@ namespace EmailSenderAPI_0513.Controllers
         {
             var receiver = "ccg4test@gmail.com";
             var subject = "Test";
-            var message = "Hellooooooo, it's captain!";
+            var message = "Hellooooooo World, it's captain! Welcome!";
 
             await _emailSender.SendEmailAsync(receiver, subject, message);
 
